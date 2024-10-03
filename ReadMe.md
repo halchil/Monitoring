@@ -18,6 +18,17 @@ docker network list
 ```
 [実行コマンド]
 docker volume create grafana-data
+
+[結果]
+grafana-data
+
+[確認コマンド]
+docker volume list
+
+[結果]
+DRIVER    VOLUME NAME
+local     a24da7f860713467df6a8c7aec0119251ed4cd9343b96624d4a2ea81743bf9d6
+local     grafana-data
 ```
 
 ## hostsファイル登録

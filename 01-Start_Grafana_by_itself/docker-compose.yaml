@@ -6,7 +6,7 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"  # ホストのポート3000をコンテナのポート3000にマッピング
-    volumes:
+    #volumes:
     #  - grafana-data:/var/lib/grafana
     #  - ./grafana conf/grafana.ini:/etc/grafana/grafana.ini  # 新しいiniファイルをマウント
     environment:
