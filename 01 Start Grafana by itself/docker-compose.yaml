@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"  # ホストのポート3000をコンテナのポート3000にマッピング
     volumes:
-      - grafana-data:/var/lib/grafana
+    #  - grafana-data:/var/lib/grafana
     #  - ./grafana conf/grafana.ini:/etc/grafana/grafana.ini  # 新しいiniファイルをマウント
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=adminpassword  # Grafana管理者のパスワード設定
