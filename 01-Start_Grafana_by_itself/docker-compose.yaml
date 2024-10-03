@@ -5,21 +5,19 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     ports:
-      - "3000:3000"  # ホストのポート3000をコンテナのポート3000にマッピング
+      - "3000:3000" 
     #volumes:
-    #  - grafana-data:/var/lib/grafana
-    #  - ./grafana conf/grafana.ini:/etc/grafana/grafana.ini  # 新しいiniファイルをマウント
+    #  - 
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=adminpassword  # Grafana管理者のパスワード設定
-    #  - GF_CONFIG_FILE=/etc/grafana/grafana_custom.ini  # カスタム設定ファイルを指定
+      - GF_SECURITY_ADMIN_PASSWORD=adminpassword  
     restart: unless-stopped
-    networks:  # ネットワークを指定
+    networks: 
       - ecosystem
 
 networks:
   ecosystem:
     external: true  # 既に作成されたネットワークを使用する場合
-    
+
 volumes:
   grafana-data:
     external: true
