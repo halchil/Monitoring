@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s  # 15秒ごとにメトリクスを収集
+
+scrape_configs:
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-exporter:9113']  # Nginx-Exporterのコンテナ名とポート
