@@ -1,0 +1,28 @@
+version: '3'
+   
+services:
+  
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"  # 外部アクセスをポート80で受け取る
+    volumes:
+      - ./grafana.conf:/etc/nginx/conf.d/default.conf:rw  # カスタムNginx設定ファイル デフォルトで存在する nginx.confとdefault.confは書き換えない　もしかしたらderfault.confへの書き換えはOKかも
+    #  - ./metrics.conf:/etc/nginx/conf.d/metrics.conf:rw  # Prometheus メトリクス用
+    #depends_on:
+    #s  - grafana
+    restart: unless-stopped
+    networks:  # ここでネットワークを指定
+      - ecosystem
+
+  #nginx-exporter:
+  #  image: nginx/nginx-prometheus-exporter:latest
+  #  ports:
+  #    - "9113:9113"
+  #  command:
+  #    - '-nginx.scrape-uri=http://nginx:80/stub_status'
+
+networks:
+  ecosystem:
+    external: true  # 既に作成されたネットワークを使用する場合
