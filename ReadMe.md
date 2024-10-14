@@ -53,3 +53,13 @@ docker compose -f docker-compose.yaml up -d
 # 確認
 
 コンテナのIPアドレス
+
+
+# トラブルシュート
+
+利用予定のポートが他のプロセスによって使用されているため、バインドできない場合
+```
+sudo lsof -i :80
+sudo kill <PID> 
+
+```
